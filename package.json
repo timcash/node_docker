@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo 'no tests'",
+    "start": "docker-compose run --rm endpoint",
+    "exec": "docker-compose run --rm endpoint /bin/bash",
+    "build": "docker-compose build",
+    "dev": "docker-compose up --remove-orphans",
+    "remove-nones": "docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["docker", "nodejs"],
+  "author": "Tim Cash",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.14.0",
-    "ramda": "^0.21.0"
-  },
   "devDependencies": {
     "nodemon": "^1.9.2"
   }

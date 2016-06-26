@@ -9,7 +9,7 @@ RUN chown -R app:app $HOME/*
 
 USER app
 WORKDIR $HOME/
-RUN npm install --silent
+RUN npm install
 
 USER root
 COPY . $HOME/
